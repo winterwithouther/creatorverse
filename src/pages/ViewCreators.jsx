@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../client'
+import CreatorCard from '../components/CreatorCard';
 
 export default function ViewCreators() {
     const [creators, setCreators] = useState([]);
@@ -20,5 +21,8 @@ export default function ViewCreators() {
 
 
     return (<div>
+        {creators.map((creator) => {
+            return <CreatorCard key={creator} creator={creator}/>
+        })}
     </div>)
 }
