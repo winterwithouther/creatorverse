@@ -1,0 +1,35 @@
+.creator-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+
+    background: rgba(40, 40, 40, 0.1);
+    max-height: 100%;
+    width: 30%;
+    padding: 30px;
+
+    display: flex;
+    gap: 20px;
+}
+
+.image-contatiner {
+    height: 100%;
+    width: 0%;
+    border: solid black 2px;
+}
+
+.creator-info {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.creator-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;        /* Removes bottom white space */
+}
