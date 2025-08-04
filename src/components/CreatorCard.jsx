@@ -16,7 +16,7 @@ export default function CreatorCard({ creator }) {
                 <h2 className='creator-name'>{name}</h2>
                 <p className='creator-description'>{description}</p>
                 <a className='creator-url' href={url} target="_blank">{url}</a>
-                <div className='links-container'>
+                <div className='creator-links-container'>
                     <Link to={`/creators/${id}`}>View</Link>{" "}
                     <Link to={`/edit/${id}`}>Edit</Link>
                 </div>

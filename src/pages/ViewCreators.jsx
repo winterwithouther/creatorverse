@@ -3,6 +3,7 @@ import { supabase } from '../client'
 import CreatorCard from '../components/CreatorCard';
 import "../css/ViewCreators.css"
 import "../App.css"
+import { Link } from 'react-router-dom';
 
 export default function ViewCreators() {
     const [creators, setCreators] = useState([]);
@@ -26,6 +27,10 @@ export default function ViewCreators() {
     <div className='main-container'>
         <div className='screen-container'>
             <h1>CreatorVerse</h1>
+            <div className='links-container'>
+                <Link>View Creators</Link>
+                <Link>Add Creator</Link>
+            </div>
         </div>
         <div className='view-creators-container'>     
             {creators.map((creator) => {
