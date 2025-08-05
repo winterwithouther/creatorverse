@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
 #root {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
+  font-family: "Tiktok Sans" sans-serf;
   height: 100%;
   margin: 0;
   padding: 0;

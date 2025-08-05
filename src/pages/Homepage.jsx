@@ -5,16 +5,11 @@ import "../css/Homepage.css"
 
 export default function Main() {
     return (
-        <div className='main-container'>
-            <div className='screen-container'>
-                <h1>CreatorVerse</h1>
-                <div className='links-container'>
-                    <Link>View Creators</Link>
-                    <Link>Add Creator</Link>
-                </div>
-            </div>
-            <div className='view-creators-container'>
-                <ShowCreators/>
+        <div className='homepage-container'>
+            <h1>CreatorVerse</h1>
+            <div className='links-container'>
+                <Link to="/creators">View Creators</Link>
+                <Link to="/add">Add Creator</Link>
             </div>
         </div>
     )
