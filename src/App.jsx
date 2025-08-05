@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import AddCreators from "./pages/AddCreators";
 import EditCreators from "./pages/EditCreators";
 import ShowCreators from "./pages/ShowCreators";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const routes = useRoutes([
@@ -12,7 +13,10 @@ function App() {
     { path: "/add", element: <AddCreators/>}
   ])
   
-  return routes;
+  return <>
+    <Toaster position="top-right" reverseOrder={false}/>
+    {routes}
+  </>;
 }
 
 export default App
