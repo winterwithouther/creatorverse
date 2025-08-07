@@ -3,5 +3,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 2em;
+    padding-top: 2em;
+    flex-wrap: wrap;
+
+    font-size: small;
+
+    height: 70%;
+    width: 80%;
+    margin: 0 auto;
 }
