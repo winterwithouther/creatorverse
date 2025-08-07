@@ -9,10 +9,13 @@ import { Link } from 'react-router-dom';
 export default function ShowCreators({ creators }) {
 
     return (
-        <div className='show-creators-container'> 
-            {creators.map((creator) => {
-                return <CreatorCard key={creator.id} creator={creator}/>
-            })}
+        <div>
+            <h1>CreatorVerse</h1>
+            <div className='show-creators-container'>
+                {creators.map((creator) => {
+                    return <CreatorCard key={creator.id} creator={creator}/>
+                })}
+            </div>
         </div>
     )
 }

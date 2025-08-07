@@ -33,7 +33,6 @@ export default function CreatorCard({ creator }) {
                     </div>
                 </div>
                 <p className='creator-description'>{description}</p>
-                
             </div>
         </div>
     )

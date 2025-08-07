@@ -1,14 +1,21 @@
 
+
 .show-creators-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-top: 2em;
     flex-wrap: wrap;
 
     font-size: small;
+    gap: 20px;
 
-    height: 70%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
+    border-top: solid rgb(60, 60, 60) 1px;
+}
+
+h1 {
+    padding-left: 30px;
 }
