@@ -6,22 +6,7 @@ import "../css/ShowCreators.css"
 
 import { Link } from 'react-router-dom';
 
-export default function ShowCreators() {
-    const [creators, setCreators] = useState([]);
-
-    useEffect(() => {
-        const fetchCreators = async () => {
-            const { data, error } = await supabase.from('creators').select('*');
-            if (error) {
-                console.error('fetching creators error:', error);
-            } else {
-                console.log('successfully fetched creators', data);
-                setCreators(data);
-            }
-        };
-
-        fetchCreators();
-    }, [])
+export default function ShowCreators({ creators }) {
 
     return (
         <div className='show-creators-container'> 
