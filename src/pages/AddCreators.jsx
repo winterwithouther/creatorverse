@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { supabase } from '../client';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
@@ -22,19 +21,34 @@ export default function AddCreators() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        
+
         const toastId = toast.loading("Adding creator...");
 
-        const { error } = await supabase.from('creators').insert([formData]);
+        try {
+            const res = await fetch("http://localhost:8000/api/creators", {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
 
-        if (error) {
-            toast.error("Failed to add creator", { id: toastId })
-            console.log("Error adding creator", error);
-        } else {
-            toast.success("Creator added!", { id: toastId })
-            navigate("/");
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.error("Failed to add creator", { id: toastId })
+                console.error("Error adding creator: ", data.error);
+            } else {
+                console.log("Successfully added creator: ", data);
+                toast.success("Creator added!", { id: toastId })
+                navigate("/creators");
+            }
+        } catch(err) {
+            console.log("Error: ", err);
         }
     }
+
+    
 
     return (
         <div>

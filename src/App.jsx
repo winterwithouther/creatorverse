@@ -7,28 +7,12 @@ import ViewCreator from "./pages/ViewCreator";
 import { useRoutes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
-import { supabase } from "./client";
 
 function App() {
-    const [creators, setCreators] = useState([]);
-
-    useEffect(() => {
-      const fetchCreators = async () => {
-          const { data, error } = await supabase.from('creators').select('*');
-          if (error) {
-              console.error('fetching creators error:', error);
-          } else {
-              console.log('successfully fetched creators', data);
-              setCreators(data);
-          }
-      };
-
-      fetchCreators();
-    }, [])
 
   const routes = useRoutes([
     { path: "/", element: <Homepage/>},
-    { path: "/creators", element: <ShowCreators creators={creators}/>},
+    { path: "/creators", element: <ShowCreators/>},
     { path: "/add", element: <AddCreators/>},
     { path: "/creators/:id", element: <ViewCreator/>}
   ])

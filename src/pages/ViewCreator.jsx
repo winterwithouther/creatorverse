@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { supabase } from '../client';
 import "../css/ViewCreator.css"
 
 export default function ViewCreator() {
@@ -9,12 +8,13 @@ export default function ViewCreator() {
     
     useEffect(() => {
         async function fetchCreator() {
-            const { data, error } = await supabase.from('creators').select('*').eq('id', id).single();
-            if (error) {
-                console.log(`Error fetching cerator: ${error}`);
-            } else {
-                console.log("Successfully fetched creator data");
+            try {
+                const res = await fetch(`http://localhost:8000/api/creators/${id}`);
+                if (!res.ok) throw new Error("Failed to fetch character");
+                const data = await res.json();
                 setCreator(data);
+            } catch (err) {
+                console.error(err);
             }
         }
 
