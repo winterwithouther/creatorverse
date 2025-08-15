@@ -1,11 +1,10 @@
-import { useRoutes } from "react-router-dom";
-import ViewCreators from "./pages/ViewCreator";
 import Homepage from "./pages/Homepage";
 import AddCreators from "./pages/AddCreators";
 import EditCreators from "./pages/EditCreators";
 import ShowCreators from "./pages/ShowCreators";
-import CreatorDetails from "./pages/CreatorDetails";
+import ViewCreator from "./pages/ViewCreator";
 
+import { useRoutes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { supabase } from "./client";
@@ -31,7 +30,7 @@ function App() {
     { path: "/", element: <Homepage/>},
     { path: "/creators", element: <ShowCreators creators={creators}/>},
     { path: "/add", element: <AddCreators/>},
-    { path: "/creators/:id", element: <CreatorDetails/>}
+    { path: "/creators/:id", element: <ViewCreator/>}
   ])
   
   return <>

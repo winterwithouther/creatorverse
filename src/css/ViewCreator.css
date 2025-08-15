@@ -1,0 +1,126 @@
+.view-creator-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.creator-info-container {
+    display: flex;
+    height: 80%;
+    gap: 80px;
+}
+
+.creator-details {
+    display: flex;
+    font-size: 2em;
+    flex-direction: column;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.creator-desc {
+    height: 100%;
+    width: 100%;
+}
+
+.creator-desc-container {
+    width: 100%;
+    height: 80%;
+    color: grey;
+    border-radius: 20px;
+}
+
+.creator-desc, .creator-link {
+    padding-left: 30px;
+}
+
+.creator-link-container {
+    display: flex;
+    align-items: center;
+    height: 20%;
+}
+
+.creator-link {
+    text-decoration: none;
+    color: white;
+    color: rgb(50, 120, 200);
+}
+
+.creator-link:hover {
+    text-decoration: underline;
+}
+
+/* IMAGE STYLING  */
+ 
+.creator-img-container {
+    height: 100%;
+    width: 40%;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.creator-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.creator-img-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* BUTTONS CONTAINER */
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    gap: 100px;
+    margin-top: 50px;
+}
+
+.buttons-container button {
+    color: white;
+    width: 20%;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
+    font-size: 2em;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.button-1 {
+    background-color: rgb(50, 120, 200);
+}
+
+.button-1:hover {
+    background-color: rgb(50, 140, 250);
+}
+
+.button-2 {
+    background-color: rgb(200, 40, 50);
+}
+
+.button-2:hover {
+    background-color: rgb(250, 40, 50);
+}
