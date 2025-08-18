@@ -79,7 +79,7 @@ export default function EditCreators() {
   return (
     <div className="container">
       <div className="edit-creator-container">
-        <h1>Edit Creator</h1>
+        <h1 className="edit-h1">Edit Creator</h1>
         <form className="form" onSubmit={handleUpdate}>
           <div className="input-container">
             <div className="details-container">
@@ -109,7 +109,7 @@ export default function EditCreators() {
             </div>
             <textarea onChange={handleChange} name="description" placeholder="description" value={formData.description}></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button className="edit-form-submit-button" type="submit">Submit</button>
         </form>
       </div>
     </div>
