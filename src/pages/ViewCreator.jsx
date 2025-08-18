@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 import "../css/ViewCreator.css"
 
@@ -42,8 +43,8 @@ export default function ViewCreator() {
                 </div>
             </div>
             <div className='buttons-container'>
-                <button className='button-1'>EDIT</button>
-                <button className='button-2'>DELETE</button>
+                <Link to={`/creators/${id}/edit`} className='link button-1'>EDIT</Link>
+                <Link className='link button-2'>DELETE</Link>
             </div>
         </div>
     )

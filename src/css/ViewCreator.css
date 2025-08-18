@@ -98,7 +98,12 @@
     margin-top: 50px;
 }
 
-.buttons-container button {
+.buttons-container .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
     color: white;
     width: 20%;
     height: 50%;

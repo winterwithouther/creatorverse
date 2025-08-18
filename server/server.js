@@ -15,12 +15,13 @@ app.get("/", (req, res) => {
 
 // GET all creators
 app.get("/api/creators", async (req, res) => {
-    const { data, err } = await supabase.from("creators").select("*");
+    const { data, err } = await supabase.from("creators").select("*").order("id", { ascending : true });
     if (err) {
         console.error("Supabase error: ", err.message);
         return res.status(500).json({ error : err.message })
     }
-    res.json(data);
+
+    return res.json(data);
 })
 
 // POST
@@ -41,7 +42,7 @@ app.post("/api/creators", async (req, res) => {
         return res.status(500).json({error: err.message});
     }
 
-    res.status(201).json(data);
+    return res.status(201).json(data);
 })
 
 
@@ -56,6 +57,21 @@ app.get("/api/creators/:id", async (req, res) => {
     }
 
     return res.json(data);
+})
+
+// PATCH
+app.patch("/api/creators/:id", async (req, res) => {
+    const { id } = req.params;
+    const updates = req.body;
+
+    const { data, error } = await supabase.from("creators").update(updates).eq("id", id).select().single();
+
+    if (error) {
+        console.error("Error updating creator: ", error.message);
+        return res.status(500).json({ error: error.message });
+    }
+
+    return res.json(data)
 })
 
 app.listen(PORT || 8001, () => {
