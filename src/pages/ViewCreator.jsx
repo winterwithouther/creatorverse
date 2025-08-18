@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 import "../css/ViewCreator.css"
+import toast from 'react-hot-toast';
 
 export default function ViewCreator() {
     const { id } = useParams();
+
+    const navigate = useNavigate();
     const [creator, setCreator] = useState(null);
     
     useEffect(() => {
@@ -21,6 +24,32 @@ export default function ViewCreator() {
 
         fetchCreator();
     }, [id])
+
+    async function handleDelete() {
+        
+        const toastId = toast.loading("Deleting creator...");
+
+        try {
+            const res = await fetch(`http://localhost:8000/api/creators/${id}`, {
+                method: "DELETE"
+            })
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.error("Failed to delete creator", { id : toastId });
+                console.error("Delete error:", data.error);
+            } else {
+                toast.success("Creator deleted", { id : toastId });
+                // Remove deleted creator from state
+                console.log("bruh")
+                navigate("/creators");
+            }
+        } catch (err) {
+            console.error("Network error:", err);
+            toast.error("Network error", { id : toastId })
+        }
+    }
 
     if (creator == null) return;
 
@@ -44,7 +73,7 @@ export default function ViewCreator() {
             </div>
             <div className='buttons-container'>
                 <Link to={`/creators/${id}/edit`} className='link button-1'>EDIT</Link>
-                <Link className='link button-2'>DELETE</Link>
+                <button onClick={handleDelete} className='link button-2'>DELETE</button>
             </div>
         </div>
     )

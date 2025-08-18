@@ -74,6 +74,25 @@ app.patch("/api/creators/:id", async (req, res) => {
     return res.json(data)
 })
 
+// DELETE /api/creators/:id
+app.delete("/api/creators/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const { error } = await supabase.from("creators").delete().eq("id", id);
+
+        if (error) {
+            console.error(error);
+            return res.status(400).json({ error: "Failed to delete creator" });
+        }
+
+        res.json({ message: "Creator deleted successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server error" });
+    }
+})
+
 app.listen(PORT || 8001, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 })
