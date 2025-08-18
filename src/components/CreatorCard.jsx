@@ -28,7 +28,7 @@ export default function CreatorCard({ creator }) {
                             <Link className='creator-link' to={`/creators/${id}`}><InfoOutlineIcon/></Link>{" "}
                         </div>
                         <div>
-                            <Link className='creator-link' to={`/edit/${id}`}><EditIcon/></Link>
+                            <Link className='creator-link' to={`/creators/${id}/edit`}><EditIcon/></Link>
                         </div>
                     </div>
                 </div>

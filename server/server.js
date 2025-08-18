@@ -58,11 +58,6 @@ app.get("/api/creators/:id", async (req, res) => {
     return res.json(data);
 })
 
-app.use((req, res, next) => {
-  console.log("Incoming request:", req.method, req.url);
-  next();
-});
-
 app.listen(PORT || 8001, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 })
