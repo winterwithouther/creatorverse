@@ -72,7 +72,6 @@ export default function AddCreators() {
                 </div>
                 <div>
                     <button type="submit">Add Creator</button>
-                    <button>Delete</button>
                 </div>
             </form>
         </div>

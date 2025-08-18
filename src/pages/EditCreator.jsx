@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import "../css/EditCreator.css"
 
 export default function EditCreators() {
   const { id } = useParams();
@@ -76,15 +77,41 @@ export default function EditCreators() {
   }
 
   return (
-    <div>
-      <h1>Edit Creator</h1>
-      <form onSubmit={handleUpdate}>
-        <input onChange={handleChange} type="text" name="name" placeholder="name" value={formData.name} required/>
-        <input onChange={handleChange} type="text" name="imageURL" placeholder="imageURL" value={formData.imageURL}/>
-        <input onChange={handleChange} type="text" name="url" placeholder="URL" value={formData.url} required/>
-        <textarea onChange={handleChange} name="description" placeholder="description" value={formData.description}></textarea>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="container">
+      <div className="edit-creator-container">
+        <h1>Edit Creator</h1>
+        <form className="form" onSubmit={handleUpdate}>
+          <div className="input-container">
+            <div className="details-container">
+              <label>Name</label>
+              <p>{"("}Go ahead and name yourself!{")"}</p>
+            </div>
+            <input onChange={handleChange} type="text" name="name" placeholder="name" value={formData.name} required/>
+          </div>
+          <div className="input-container">
+            <div className="details-container">
+              <label>Image URL</label>
+              <p>{"("}Give yourself a beautiful picture!{")"}</p>
+            </div>
+            <input onChange={handleChange} type="text" name="imageURL" placeholder="imageURL" value={formData.imageURL}/>
+          </div>
+          <div className="input-container">
+            <div className="details-container">
+              <label>URL</label>
+              <p>{"("}People may visit you{")"}</p>
+            </div>
+            <input onChange={handleChange} type="text" name="url" placeholder="URL" value={formData.url} required/>
+          </div>
+          <div className="input-container">
+            <div className="details-container">
+              <label>Description</label>
+              <p>{"("}Tell us a little about yourself{")"}</p>
+            </div>
+            <textarea onChange={handleChange} name="description" placeholder="description" value={formData.description}></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   )
 }
