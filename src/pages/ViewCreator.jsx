@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
+
+import Loading from '../components/Loading';
 import "../css/ViewCreator.css"
 import toast from 'react-hot-toast';
 
@@ -9,6 +11,7 @@ export default function ViewCreator() {
 
     const navigate = useNavigate();
     const [creator, setCreator] = useState(null);
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         async function fetchCreator() {
@@ -19,6 +22,8 @@ export default function ViewCreator() {
                 setCreator(data);
             } catch (err) {
                 console.error(err);
+            } finally {
+                setLoading(false);
             }
         }
 
@@ -52,6 +57,10 @@ export default function ViewCreator() {
     }
 
     if (creator == null) return;
+
+    if (loading) {
+        return <Loading/>
+    }
 
     return (
         <div className='view-creator-container'>

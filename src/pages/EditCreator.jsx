@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+
+import Loading from "../components/Loading";
+import toast from "react-hot-toast";
 import "../css/EditCreator.css"
 
 export default function EditCreators() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     url: "",
@@ -35,6 +38,9 @@ export default function EditCreators() {
       } catch (err) {
         console.error("Error fetching creator: ", err);
         toast.error("Network error loading creator");
+      } finally {
+        console.log("finally")
+        setLoading(false);
       }
     }
 
@@ -74,6 +80,11 @@ export default function EditCreators() {
     } catch (err) {
       console.log(err);
     }
+  }
+
+
+  if (loading) {
+      return <Loading/>
   }
 
   return (

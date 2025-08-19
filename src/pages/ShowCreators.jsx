@@ -1,13 +1,17 @@
 
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import CreatorCard from '../components/CreatorCard';
+import Loading from '../components/Loading.jsx'; 
+
 import "../App.css"
 import "../css/ShowCreators.css"
-import { useNavigate } from 'react-router-dom';
 
 export default function ShowCreators() {
     const navigate = useNavigate();
 
+    const [loading, setLoading] = useState(true);
     const [creators, setCreators] = useState([]);
 
     useEffect(() => {
@@ -23,6 +27,8 @@ export default function ShowCreators() {
                 }
             } catch (err) {
                 console.error(err);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -31,6 +37,10 @@ export default function ShowCreators() {
 
     function handleClick() {
         navigate("/")
+    }
+
+    if (loading) {
+        return <Loading/>
     }
 
     return (
