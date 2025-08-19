@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<a href='https://www.youtube.com/watch?v=K6UHofGgEtA' title='Video Walkthrough'/>Video Walkthrough</a>
+👉🏿<a href='https://www.youtube.com/watch?v=K6UHofGgEtA' title='Video Walkthrough' target="_blank"/>Video Walkthrough</a>
 
 ## Notes
 
