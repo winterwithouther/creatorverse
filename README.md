@@ -4,7 +4,7 @@ Submitted by: **👉🏿 Eman Gurung**
 
 About this web app: **👉🏿 CreatorVerse is a platform for discovering, showcasing, and managing content creators. Users can browse a curated list of creators, view detailed profiles, and explore their work through linked websites or channels. The app also allows users to add new creators, edit existing profiles, or remove outdated entries — all powered by a simple and responsive interface built with React and Supabase as a backend-as-a-service.**
 
-Time spent: **👉🏿 38** 
+Time spent: **👉🏿 38~ hours** 
 
 ## Required Features
 
@@ -30,7 +30,6 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
 - [X] Toast for notifications after submitting and deleting creator content
 - [X] Material UI for icons to improve clean user interface
 - [X] React Motion Framer for animation
