@@ -1,10 +1,10 @@
-# WEB103 Prework - *👉🏿 Creatorverse*
+# WEB103 Prework - *Creatorverse*
 
-Submitted by: **👉🏿 Eman Gurung**
+Submitted by: **Eman Gurung**
 
-About this web app: **👉🏿 CreatorVerse is a platform for discovering, showcasing, and managing content creators. Users can browse a curated list of creators, view detailed profiles, and explore their work through linked websites or channels. The app also allows users to add new creators, edit existing profiles, or remove outdated entries — all powered by a simple and responsive interface built with React and Supabase as a backend-as-a-service.**
+About this web app: **CreatorVerse is a platform for discovering, showcasing, and managing content creators. Users can browse a curated list of creators, view detailed profiles, and explore their work through linked websites or channels. The app also allows users to add new creators, edit existing profiles, or remove outdated entries — all powered by a simple and responsive interface built with React and Supabase as a backend-as-a-service.**
 
-Time spent: **👉🏿 38~ hours** 
+Time spent: **~38 hours** 
 
 ## Required Features
 
@@ -51,7 +51,7 @@ the styling turned out in the end of the day.
 
 ## License
 
-Copyright [👉🏿 yyyy] [👉🏿 name of copyright owner]
+Copyright 2925 Eman Gurung
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
