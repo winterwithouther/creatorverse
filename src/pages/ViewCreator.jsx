@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 
+import Header from '../components/Header';
 import Loading from '../components/Loading';
-import "../css/ViewCreator.css"
 import toast from 'react-hot-toast';
+
+import "../css/ViewCreator.css"
 
 export default function ViewCreator() {
     const { id } = useParams();
@@ -63,27 +65,30 @@ export default function ViewCreator() {
     }
 
     return (
-        <div className='view-creator-container'>
-            <div className='creator-info-container'>
-                <div className='creator-img-container'>
-                    <img className='creator-img' src={creator.imageURL} alt="image" />
+        <>
+            <Header/>
+            <div className='view-creator-container'>
+                <div className='creator-info-container'>
+                    <div className='creator-img-container'>
+                        <img className='creator-img' src={creator.imageURL} alt="image" />
+                    </div>
+                    <div className='creator-details'>
+                        <div className='creator-name-container'>
+                            <h1 className='creator-name'>{creator.name}</h1>
+                        </div>
+                        <div className='creator-desc-container'>
+                            <p className='creator-desc'>{creator.description}</p>
+                        </div>
+                        <div className='creator-link-container'>
+                            <a className='creator-link' href={creator.url}>Visit Website</a>
+                        </div>
+                    </div>
                 </div>
-                <div className='creator-details'>
-                    <div className='creator-name-container'>
-                        <h1 className='creator-name'>{creator.name}</h1>
-                    </div>
-                    <div className='creator-desc-container'>
-                        <p className='creator-desc'>{creator.description}</p>
-                    </div>
-                    <div className='creator-link-container'>
-                        <a className='creator-link' href={creator.url}>Visit Website</a>
-                    </div>
+                <div className='buttons-container'>
+                    <Link to={`/creators/${id}/edit`} className='link button-1'>EDIT</Link>
+                    <button onClick={handleDelete} className='link button-2'>DELETE</button>
                 </div>
             </div>
-            <div className='buttons-container'>
-                <Link to={`/creators/${id}/edit`} className='link button-1'>EDIT</Link>
-                <button onClick={handleDelete} className='link button-2'>DELETE</button>
-            </div>
-        </div>
+        </>
     )
 }

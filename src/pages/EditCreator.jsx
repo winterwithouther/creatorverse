@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
+import Header from "../components/Header";
 import Loading from "../components/Loading";
 import toast from "react-hot-toast";
 import "../css/EditCreator.css"
@@ -88,41 +89,44 @@ export default function EditCreators() {
   }
 
   return (
-    <div className="container">
-      <div className="edit-creator-container">
-        <h1 className="edit-h1">Edit Creator</h1>
-        <form className="form" onSubmit={handleUpdate}>
-          <div className="input-container">
-            <div className="details-container">
-              <label>Name</label>
-              <p>{"("}Go ahead and name yourself!{")"}</p>
+    <>
+      <Header/>
+      <div className="container">
+        <div className="edit-creator-container">
+          <h1 className="edit-h1">Edit Creator</h1>
+          <form className="form" onSubmit={handleUpdate}>
+            <div className="input-container">
+              <div className="details-container">
+                <label>Name</label>
+                <p>{"("}Go ahead and name yourself!{")"}</p>
+              </div>
+              <input onChange={handleChange} type="text" name="name" placeholder="name" value={formData.name} required/>
             </div>
-            <input onChange={handleChange} type="text" name="name" placeholder="name" value={formData.name} required/>
-          </div>
-          <div className="input-container">
-            <div className="details-container">
-              <label>Image URL</label>
-              <p>{"("}Give yourself a beautiful picture!{")"}</p>
+            <div className="input-container">
+              <div className="details-container">
+                <label>Image URL</label>
+                <p>{"("}Give yourself a beautiful picture!{")"}</p>
+              </div>
+              <input onChange={handleChange} type="text" name="imageURL" placeholder="imageURL" value={formData.imageURL}/>
             </div>
-            <input onChange={handleChange} type="text" name="imageURL" placeholder="imageURL" value={formData.imageURL}/>
-          </div>
-          <div className="input-container">
-            <div className="details-container">
-              <label>URL</label>
-              <p>{"("}People may visit you{")"}</p>
+            <div className="input-container">
+              <div className="details-container">
+                <label>URL</label>
+                <p>{"("}People may visit you{")"}</p>
+              </div>
+              <input onChange={handleChange} type="text" name="url" placeholder="URL" value={formData.url} required/>
             </div>
-            <input onChange={handleChange} type="text" name="url" placeholder="URL" value={formData.url} required/>
-          </div>
-          <div className="input-container">
-            <div className="details-container">
-              <label>Description</label>
-              <p>{"("}Tell us a little about yourself{")"}</p>
+            <div className="input-container">
+              <div className="details-container">
+                <label>Description</label>
+                <p>{"("}Tell us a little about yourself{")"}</p>
+              </div>
+              <textarea onChange={handleChange} name="description" placeholder="description" value={formData.description}></textarea>
             </div>
-            <textarea onChange={handleChange} name="description" placeholder="description" value={formData.description}></textarea>
-          </div>
-          <button className="edit-form-submit-button" type="submit">Submit</button>
-        </form>
+            <button className="edit-form-submit-button" type="submit">Submit</button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

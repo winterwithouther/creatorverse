@@ -93,6 +93,7 @@
 .creator-description {
     color: rgb(160, 160, 160);
     height: 100%;
+    font-size: 1.1rem;
 }
 
 .top-row {
@@ -102,11 +103,9 @@
 }
 
 .creator-links-container {
-    /* display: flex;
-    width: 15%;
-    justify-content: space-evenly;
-    align-items: center; */
     display: flex;
+    width: 20%;
+    justify-content: space-evenly;
 }
 
 .creator-links-container * {

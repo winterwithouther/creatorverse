@@ -1,7 +1,9 @@
 
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
+import Header from '../components/Header.jsx';
 import CreatorCard from '../components/CreatorCard';
 import Loading from '../components/Loading.jsx'; 
 
@@ -9,8 +11,6 @@ import "../App.css"
 import "../css/ShowCreators.css"
 
 export default function ShowCreators() {
-    const navigate = useNavigate();
-
     const [loading, setLoading] = useState(true);
     const [creators, setCreators] = useState([]);
 
@@ -45,12 +45,16 @@ export default function ShowCreators() {
 
     return (
         <div>
-            <h1 onClick={handleClick}>CreatorVerse</h1>
-            <div className='show-creators-container'>
+            <Header/>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+            className='show-creators-container'>
                 {creators.map((creator) => {
                     return <CreatorCard key={creator.id} creator={creator}/>
                 })}
-            </div>
+            </motion.div>
         </div>
     )
 }

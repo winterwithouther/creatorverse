@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+
+import Header from '../components/Header';
 import "../css/AddCreator.css"
 
 export default function AddCreators() {
@@ -50,29 +52,32 @@ export default function AddCreators() {
     }
 
     return (
-        <div className='add-creator-container'>
-            <div className='secondary-add-creator-container'>
-                <h1 className='add-h1'>Add a New Creator</h1>
-                <form className='add-form' onSubmit={handleSubmit}>
-                    <div className='input-field'>
-                        <label>Name</label>
-                        <input name="name" type="text" placeholder="name" onChange={handleChange} required/>
-                    </div>
-                    <div className='input-field'>
-                        <label>Image</label>
-                        <input name="imageURL" type="text" placeholder="image.png" onChange={handleChange} required/>
-                    </div>
-                    <div className='input-field'>
-                        <label>Description</label>
-                        <input name="description" type="text" placeholder="description" onChange={handleChange} required/>
-                    </div>
-                    <div className='input-field'>
-                        <label>Channel URL</label>
-                        <input name="url" type="text" placeholder="www.test.com" onChange={handleChange} required/>
-                    </div>
-                    <button className='add-submit-button' type="submit">Add Creator</button>  
-                </form>
+        <>
+            <Header/>
+            <div className='add-creator-container'>
+                <div className='secondary-add-creator-container'>
+                    <h1 className='add-h1'>Add a New Creator</h1>
+                    <form className='add-form' onSubmit={handleSubmit}>
+                        <div className='input-field'>
+                            <label>Name</label>
+                            <input name="name" type="text" placeholder="name" onChange={handleChange} required/>
+                        </div>
+                        <div className='input-field'>
+                            <label>Image</label>
+                            <input name="imageURL" type="text" placeholder="image.png" onChange={handleChange} required/>
+                        </div>
+                        <div className='input-field'>
+                            <label>Description</label>
+                            <input name="description" type="text" placeholder="description" onChange={handleChange} required/>
+                        </div>
+                        <div className='input-field'>
+                            <label>Channel URL</label>
+                            <input name="url" type="text" placeholder="www.test.com" onChange={handleChange} required/>
+                        </div>
+                        <button className='add-submit-button' type="submit">Add Creator</button>  
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
