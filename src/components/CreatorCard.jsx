@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+
 import "../css/CreatorCard.css"
 import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import EditIcon from '@mui/icons-material/Edit';
@@ -22,7 +23,7 @@ export default function CreatorCard({ creator }) {
                     <h2 className='creator-name'>{name}</h2>
                     <div className='creator-links-container'>
                         <div>
-                             <a className='creator-url creator-link' href={url} target="_blank">{<LanguageIcon/>}</a>
+                             <a className='creator-url creator-link' href={url}>{<LanguageIcon/>}</a>
                         </div>
                         <div>
                             <Link className='creator-link' to={`/creators/${id}`}><InfoOutlineIcon/></Link>{" "}

@@ -35,10 +35,6 @@ export default function ShowCreators() {
         fetchCreators();
     }, [])
 
-    function handleClick() {
-        navigate("/")
-    }
-
     if (loading) {
         return <Loading/>
     }
@@ -47,7 +43,7 @@ export default function ShowCreators() {
         <div>
             <Header/>
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             className='show-creators-container'>

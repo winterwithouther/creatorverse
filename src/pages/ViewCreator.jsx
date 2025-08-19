@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 import Header from '../components/Header';
 import Loading from '../components/Loading';
@@ -67,7 +68,11 @@ export default function ViewCreator() {
     return (
         <>
             <Header/>
-            <div className='view-creator-container'>
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className='view-creator-container'>
                 <div className='creator-info-container'>
                     <div className='creator-img-container'>
                         <img className='creator-img' src={creator.imageURL} alt="image" />
@@ -88,7 +93,7 @@ export default function ViewCreator() {
                     <Link to={`/creators/${id}/edit`} className='link button-1'>EDIT</Link>
                     <button onClick={handleDelete} className='link button-2'>DELETE</button>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
