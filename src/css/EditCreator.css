@@ -47,7 +47,8 @@
 }
 
 .input-container input:focus, textarea:focus {
-    transition: .25s ease-in-out;
+    transition: .25s ease-out;
+    border-color: white;
     box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.1);
 }
 
@@ -74,9 +75,12 @@
     letter-spacing: 2px;
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: grey;
 }
 
 .edit-form-submit-button:hover {
-    transition: .25s ease-in-out;
+    transition: .25s ease-out;
+    border-color: white;
     box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.1);
+    color: white;
 }
